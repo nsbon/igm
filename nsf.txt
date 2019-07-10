@@ -6,11 +6,6 @@ Settings
 background:https://raw.githubusercontent.com/nsbon/igm/master/wall.png
 building cost increase: 101%
 building cost refund: 50%
-CSS
-	#game.filtersOn .thing.cantAfford.notOwned
-	{
-		filter:blur(3px);
-	}
 Buttons
 	*boing
 		name:???
