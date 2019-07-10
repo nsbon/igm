@@ -3,7 +3,7 @@ name:Mega Clicker
 desc:Click hard!
 version:0.2
 Settings
-background:https://github.com/nsbon/igm/blob/master/wall.png?raw=true
+background:https://raw.githubusercontent.com/nsbon/igm/master/wall.png
 building cost increase: 101%
 building cost refund: 50%
 Buttons
