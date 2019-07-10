@@ -7,7 +7,7 @@ background:https://raw.githubusercontent.com/nsbon/igm/master/wall.png
 building cost increase: 101%
 building cost refund: 50%
 CSS
-	#box-res
+	*
 		{
 		opacity:0 !important;color:#000
 		}
