@@ -9,7 +9,7 @@ building cost refund: 50%
 Buttons
 	*boing
 		name:???
-		desc:Click this person to get souls?
+		desc:Click to get Souls
 		on click:anim icon wobble
 		on click:yield 1 soul
 		on click:yield 1 size
