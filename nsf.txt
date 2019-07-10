@@ -1,0 +1,369 @@
+Let's make a game!
+name:Mega Clicker
+desc:Click hard!
+version:0.2
+Settings
+building cost increase: 101%
+building cost refund: 50%
+Buttons
+	*boing
+		name:???
+		desc:Click this person to get souls?
+		on click:anim icon wobble
+		on click:yield 1 soul
+		on click:yield 1 size
+		on click:if (chance(10%)) yield 1 exp
+		on click:if (have i and chance(10%)) yield 1 exp
+		no text
+		class:bigButton hasFlares
+		tooltip origin:bottom
+		tooltip class:red
+Resources
+*soul|souls
+name:Soul|Souls
+desc:The Base Currency
+hidden when 0
+*exp
+name:Experience
+desc:A somewhat rare currency.
+hidden when 0
+*brs
+name:Broken Strap
+desc:It had to happen eventually.
+hidden when 0
+*size
+name:Size (m)
+desc:Your Hugeness
+hidden when 0
+*nut
+name:Bottle of Nut|Bottles of Nut
+desc:yes.
+hidden when 0
+Buildings
+*bra|bras
+name:Small Bra|Small Bras
+cost:10 souls
+desc:A very small bra. Can't hold much.<//><b>Effect:</b><.>Produces 1 soul every 10 seconds.
+on tick:yield 0.1 soul
+*mebra|mebras
+name:Bra|Bras
+cost:100 souls
+desc:Average scale bra. Not to big.<//><b>Effect:</b><.>Produces 1.1 soul every second.
+on tick:yield 1.1 soul
+*labra|labras
+name:Large Bra|Large Bras
+cost:4000 souls
+desc:A big bra, capable of almost holding a whole head.<//><b>Effect:</b><.>Produces 10 souls every second.
+on tick:yield 10 soul
+on tick:if (chance(1%)) yield 0.1 brs
+*hubra|hubras
+name:Huge Bra|Huge Bras
+cost:1000000 souls
+desc:How this bra fits on anyone is unknown.<//><b>Effect:</b><.>Produces 1000 souls every second.
+on tick:yield 1000 soul
+on tick:if (chance(10%)) yield 0.1 brs
+*gibra|gibras
+name:Gigantic Bra|Gigantic Bras
+cost:10000000 souls
+desc:This bra is bigger than a person.<//><b>Effect:</b><.>Produces 11000 souls every second.
+on tick:yield 11000 soul
+on tick:if (chance(25%)) yield 0.1 brs
+*subra|subras
+name:Super Bra|Super Bras
+cost:50000000 souls and 20 exp
+desc:This bra is bigger than a room. Hot damn.<//><b>Effect:</b><.>Produces 110000 souls every second.
+on tick:yield 110000 soul
+on tick:yield 0.01 exp
+on tick:if (chance(75%)) yield 0.1 brs
+*sunbra|sunbras
+name:Supernova Bra|Supernova Bras
+cost:50000000000 souls and 210 exp
+desc:Bigger than our galaxy<//><b>Effect:</b><.>Produces 30M souls every second.
+on tick:yield 30000000 soul
+on tick:yield 50 exp
+on tick:yield 0.1 brs
+Upgrades
+	*boinger
+		name:Busty
+		desc:Increase the soul rate.<//><b>Effect:</b><.>+1 soul/click
+		cost:70 souls
+		passive:increase soul yield of boing by 1
+		req:10 souls:earned
+	*boinger2
+		name:Heavy
+		desc:Double the soul rate.<//><b>Effect:</b><.>x2 soul/click
+		cost:300 souls
+		passive:multiply soul yield of boing by 2
+		req:100 souls:earned
+	*boinger3
+		name:Massive
+		desc:Double the soul rate.<//><b>Effect:</b><.>x2 soul/click
+		cost:1200 souls
+		passive:multiply soul yield of boing by 2
+		req:600 souls:earned
+	*boinger4
+		name:Gigantic
+		desc:Double the soul rate.<//><b>Effect:</b><.>x2 soul/click
+		cost:3600 souls
+		passive:multiply soul yield of boing by 2
+		req:1800 souls:earned
+	*boinger5
+		name:Monsters
+		desc:Double the soul rate.<//><b>Effect:</b><.>x2 soul/click
+		cost:7200 souls
+		passive:multiply soul yield of boing by 2
+		req:3600 souls:earned
+	*boinger6
+		name:Humongous
+		desc:Triple the soul rate.<//><b>Effect:</b><.>x3 soul/click
+		cost:14400 souls
+		passive:multiply soul yield of boing by 3
+		req:7200 souls:earned
+	*a1
+		name:A Cup
+		desc:Increase your bust.<//><b>Effect:</b><.>+1 soul/click
+		cost:1 exp
+		passive:increase soul yield of boing by 1
+		req:1 exp:earned
+	*a2
+		name:AA Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>+1 soul/click
+		cost:1 exp
+		passive:increase soul yield of boing by 1
+		req:1 exp:earned
+	*b
+		name:B Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>+2 soul/click
+		cost:2 exp
+		passive:increase soul yield of boing by 2
+		req:1 exp:earned
+	*c
+		name:C Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>110% soul/click
+		cost:10 exp
+		passive:multiply soul yield of boing by 1.1
+		req:1 exp:earned
+	*d
+		name:D Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>112% soul/click
+		cost:13 exp
+		passive:multiply soul yield of boing by 1.12
+		req:1 exp:earned
+	*f
+		name:F Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>130% soul/click
+		cost:23 exp
+		passive:multiply soul yield of boing by 1.3
+		req:1 exp:earned and d
+	*g
+		name:G Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>135% soul/click
+		cost:30 exp
+		passive:multiply soul yield of boing by 1.35
+		req:1 exp:earned and d
+	*i
+		name:I Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>150% soul/click<//><.>+10% Chance for +1 Experience.
+		cost:45 exp and 20000 souls
+		passive:multiply soul yield of boing by 1.5
+		req:1 exp:earned and d
+	*j
+		name:J Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>150% soul/click
+		cost:65 exp
+		passive:multiply soul yield of boing by 1.5
+		req:1 exp:earned and d
+	*l
+		name:L Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>170% soul/click<//><.>0.01 Broken Straps/click
+		cost:100 exp
+		passive:multiply soul yield of boing by 1.7
+		passive:increase brs yield of boing by 0.01
+		req:50 exp:earned and d
+	*n
+		name:N Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>200% soul/click<//><.>0.1 Broken Straps/click
+		cost:130 exp
+		passive:multiply soul yield of boing by 2
+		passive:increase brs yield of boing by 0.1
+		req:100 exp:earned and l
+	*p
+		name:P Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>230% soul/click<//><.>0.2 Broken Straps/click
+		cost:170 exp
+		passive:multiply soul yield of boing by 2.3
+		passive:increase brs yield of boing by 0.2
+		req:100 exp:earned and l
+	*r
+		name:R Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>260% soul/click<//><.>0.2 Broken Straps/click
+		cost:220 exp
+		passive:multiply soul yield of boing by 2.6
+		passive:increase brs yield of boing by 0.2
+		req:100 exp:earned and l
+	*t
+		name:T Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>300% soul/click<//><.>0.4 Broken Straps/click<//><.>5 Exp/click
+		cost:270 exp
+		passive:multiply soul yield of boing by 3
+		passive:increase brs yield of boing by 0.4
+		passive:increase exp yield of boing by 5
+		req:100 exp:earned and l
+	*v
+		name:V Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>330% soul/click<//><.>0.4 Broken Straps/click
+		cost:1000 exp
+		passive:multiply soul yield of boing by 3.3
+		passive:increase brs yield of boing by 0.4
+		req:100 exp:earned and l
+	*r2
+		name:R Cup 2
+		desc:Increase your bust further.<//><b>Effect:</b><.>400% soul/click<//><.>0.4 Broken Straps/click
+		cost:1600 exp
+		passive:multiply soul yield of boing by 4
+		passive:increase brs yield of boing by 0.4
+		req:100 exp:earned and l
+	*t2
+		name:T Cup 2
+		desc:Increase your bust further.<//><b>Effect:</b><.>430% soul/click<//><.>0.4 Broken Straps/click
+		cost:1600 exp
+		passive:multiply soul yield of boing by 4.3
+		passive:increase brs yield of boing by 0.4
+		req:100 exp:earned and l
+	*v2
+		name:V Cup 2
+		desc:Increase your bust further.<//><b>Effect:</b><.>480% soul/click<//><.>0.4 Broken Straps/click
+		cost:2300 exp and 80 brs
+		passive:multiply soul yield of boing by 4.8
+		passive:increase brs yield of boing by 0.4
+		req:100 exp:earned and l
+	*y
+		name:Y Cup
+		desc:Increase your bust further.<//><b>Effect:</b><.>550% soul/click<//><.>0.4 Broken Straps/click
+		cost:3100 exp
+		passive:multiply soul yield of boing by 4.8
+		passive:increase brs yield of boing by 0.4
+		req:100 exp:earned and l
+	*z
+		name:Z Cup
+		desc:Increase your bust to the final letter.<//><b>Effect:</b><.>1000% soul/click<//><.>3 Broken Straps/click
+		cost:9000 exp
+		passive:multiply soul yield of boing by 10
+		passive:increase brs yield of boing by 3
+		req:4000 exp:earned and y
+	*mshftbra
+		name:Makeshift Bra
+		desc:It might work.<//><b>Effect:</b><.>320% soul/click
+		cost:70 exp and 30000 souls and 5 brs
+		passive:multiply soul yield of boing by 3.2
+		req:1 exp:earned and d
+	*pb
+		name:Poorly Made Bra
+		desc:Whether or not it can handle you is unknown.<//><b>Effect:</b><.>500% soul/click<//><.>1% exp/click
+		cost:110 exp and 60000 souls and 40 brs
+		passive:multiply soul yield of boing by 5
+		passive:increase exp yield of boing by 0.01
+		req:80 exp:earned and l and mshftbra
+	*mb
+		name:Mini Bra
+		desc:So much skin...<//><b>Effect:</b><.>1000% soul/click<//><.>10% exp/click
+		cost:170 exp and 3500000 souls and 10 brs
+		passive:multiply soul yield of boing by 10
+		passive:multiply exp yield of boing by 1.1
+		req:80 exp:earned and l and mshftbra
+	*brl
+		name:Braless
+		desc:The sexiest.<//><b>Effect:</b><.>10000% soul/click<//><.>+30 exp/click
+		cost:1000 exp
+		passive:multiply soul yield of boing by 100
+		passive:increase exp yield of boing by 30
+		req:80 exp:earned and l and mshftbra
+	*gb1
+		name:Growth Boost 1
+		desc:Bigger Faster<//><b>Effect:</b><.>200% size/click
+		cost:20 exp and 2 brs and 500 souls
+		passive:multiply size yield of boing by 2
+		req:20 exp:earned
+	*gb2
+		name:Growth Boost 2
+		desc:Bigger Faster<//><b>Effect:</b><.>200% size/click
+		cost:50 exp and 12 brs and 1200 souls
+		passive:multiply size yield of boing by 2
+		req:20 exp:earned and gb1
+	*gb3
+		name:Growth Boost 3
+		desc:Bigger Faster<//><b>Effect:</b><.>200% size/click
+		cost:130 exp and 35 brs and 3100 souls
+		passive:multiply size yield of boing by 2
+		req:20 exp:earned and gb2
+	*gb4
+		name:Growth Boost 4
+		desc:Bigger Faster<//><b>Effect:</b><.>200% size/click
+		cost:300 exp and 51 brs and 6700 souls
+		passive:multiply size yield of boing by 2
+		req:20 exp:earned and gb3
+	*gb5
+		name:Growth Boost 5
+		desc:Bigger Faster<//><b>Effect:</b><.>400% size/click
+		cost:1300 exp and 210 brs and 12000 souls
+		passive:multiply size yield of boing by 4
+		req:20 exp:earned and gb4
+	*gb6
+		name:Growth Boost 6
+		desc:Bigger Faster<//><b>Effect:</b><.>400% size/click
+		cost:3500 exp and 490 brs and 52100 souls
+		passive:multiply size yield of boing by 4
+		req:20 exp:earned and gb5
+	*gp
+		name:Growth Potion
+		desc:Bigger Faster<//><b>Effect:</b><.>200% size/click</b><.>1 Bra Strap/tick (First time)
+		cost:5 nut and 120 exp and 4000 souls
+		on click:
+if (nut>4)
+multiply size yield of boing by 2
+end
+end
+		passive:yield 1 brs
+		req:20 exp:earned
+Achievements
+	*b1
+		name:Sexy Beginnings
+		desc:Be large.
+		req:50 size
+	*b2
+		name:Massiveness
+		desc:Be larger.
+		req:250 size
+	*b3
+		name:Super Hugeness
+		desc:Be largerer.
+		req:750 size
+	*b4
+		name:Super Giant
+		desc:Be largerererer.
+		req:2100 size
+	*b5
+		name:Supermassive
+		desc:Be largerererererer.
+		req:210000000 size
+	*b6
+		name:Heavyweight
+		desc:You're a bit big.<//><#0f0>200% Size Increase/click</#><//><#0f0>300% Bra Straps/click</#>
+		req:300 size
+		on earn:toast You're pretty big!
+		passive:
+			grant 50 exp
+			multiply size yield of boing by 2
+			multiply brs yield of boing by 3
+end
+	*b7
+		name:Human Crusher
+		desc:You're a bit big.<//><#0f0>200% Size Increase/click</#><//><#0f0>300% Bra Straps/click</#><//><#0f0>1 Bottle of Nut/tick</#>
+		req:1500 size
+		on tick:yield 1 nut
+		on earn:toast You can slow down now.
+		passive:
+			grant 150 exp
+			multiply size yield of boing by 2
+			multiply brs yield of boing by 3
+end
